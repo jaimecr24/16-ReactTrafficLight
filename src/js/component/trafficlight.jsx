@@ -19,7 +19,7 @@ const TrafficLight = () => {
 	};
 
 	return (
-		<div className="container">
+		<div id="container">
 			<div className="traffic-top"></div>
 			<div className="traffic-light">
 				<div className={classObj["red"]} onClick={handleClick}></div>

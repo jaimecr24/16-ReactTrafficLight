@@ -11,10 +11,8 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
-.container {
-    width: 100%;
+#container {
     display: flex;
-    align-content: center;
     flex-direction: column;
 }
 
@@ -28,7 +26,6 @@
 .traffic-light{
     background-color: black;
     padding: 10px;
-    display: inline-block;
     margin: auto;
     border-radius:5%;
 }
@@ -37,7 +34,6 @@
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: blue;
 }
 
 .red{
