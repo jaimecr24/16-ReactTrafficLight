@@ -1,30 +1,24 @@
 import React, { useState } from "react";
 
+import Light from "./light.jsx";
+
 const TrafficLight = () => {
-	const [selected, setSelected] = useState("green");
-
-	let classObj = {
-		red: `light red${selected == "red" ? " glow" : ""}`,
-		yellow: `light yellow${selected == "yellow" ? " glow" : ""}`,
-		green: `light green${selected == "green" ? " glow" : ""}`
-	};
-
-	const handleClick = e => {
-		let colorclicked = e.target.classList[1];
-		if (selected !== colorclicked) {
-			classObj[selected] = `light ${selected}`;
-			classObj[colorclicked] = `light ${colorclicked} glow`;
-			setSelected(colorclicked);
-		}
-	};
+	const [selected, setSelected] = useState({
+		// initial state
+		// selected & setSelected will be passed to Light component
+		// Light component handles click event and change 'selected' if necesary
+		red: false,
+		yellow: false,
+		green: true
+	});
 
 	return (
 		<div id="container">
 			<div className="traffic-top"></div>
 			<div className="traffic-light">
-				<div className={classObj["red"]} onClick={handleClick}></div>
-				<div className={classObj["yellow"]} onClick={handleClick}></div>
-				<div className={classObj["green"]} onClick={handleClick}></div>
+				<Light color="red" stateVar={selected} fSet={setSelected} />
+				<Light color="yellow" stateVar={selected} fSet={setSelected} />
+				<Light color="green" stateVar={selected} fSet={setSelected} />
 			</div>
 		</div>
 	);
