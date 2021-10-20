@@ -3,13 +3,12 @@ import PropTypes from "prop-types";
 
 const Light = props => {
 	const handleClick = e => {
-		// the color clicked is the second item of classList in target
-		let colorclicked = e.target.classList[1];
+		// the color clicked is props.color
 		props.fSet({
 			// only one property is true, the others are false
-			red: colorclicked === "red",
-			yellow: colorclicked === "yellow",
-			green: colorclicked === "green"
+			red: props.color === "red",
+			yellow: props.color === "yellow",
+			green: props.color === "green"
 		});
 	};
 
